@@ -3,4 +3,28 @@
 
 {% block content%}
 	<h1>Welcome Home</h1>
-{% endblock%}
+
+	{% if all_addresses %}
+		{% for records in all_addresses %}
+			{{ records.firstname }}<br>
+			{{ records.lastname }}<br>				    
+			{{ records.email }}<br>
+			{{ records.phone }}<br>
+			{{ records.occupation }}<br>
+			{{ records.category }}<br>
+			{{ records.day }}<br>
+			{{ records.month }}<br>
+			{{ records.date }}<br>
+			{{ records.year }}<br>
+			{{ records.time }}<br>
+			{{ records.ampm }}<br>
+			{{ records.location}}<br>
+			{{ records.address }}<br>
+			{{ records.city }}<br>
+			{{ records.state }}<br>
+			{{ records.zipcode }}<br>
+			<hr/>
+		{% endfor %}
+	{% endif %}
+
+{% endblock %}
