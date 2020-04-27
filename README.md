@@ -8,3 +8,5 @@ Marys Appt App v.3
 * a datepicker(nice looking one)
 * if Onsite selected:
   * pop up an address entry
+* Swap the pages around
+  * appointment entry should be the first page
