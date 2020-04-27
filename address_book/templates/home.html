@@ -2,29 +2,44 @@
 
 
 {% block content%}
-	<h1>Welcome Home</h1>
+
+<div class="container">
+	
 
 	{% if all_addresses %}
 		{% for records in all_addresses %}
-			{{ records.firstname }}<br>
-			{{ records.lastname }}<br>				    
-			{{ records.email }}<br>
-			{{ records.phone }}<br>
-			{{ records.occupation }}<br>
-			{{ records.category }}<br>
-			{{ records.day }}<br>
-			{{ records.month }}<br>
-			{{ records.date }}<br>
-			{{ records.year }}<br>
-			{{ records.time }}<br>
-			{{ records.ampm }}<br>
-			{{ records.location}}<br>
-			{{ records.address }}<br>
-			{{ records.city }}<br>
-			{{ records.state }}<br>
-			{{ records.zipcode }}<br>
-			<hr/>
+		<div class="col-sm">
+			<ul class="list-group">
+					<li class="list-group-item list-group-item-secondary"><strong><h2>Appointment Date:</h2></strong><b>{{ records.month }} {{ records.date }}, {{ records.year }}</b></li>
+					<li class="list-group-item"><strong>First Name:</strong> {{ records.firstname }}</li>
+					<li class="list-group-item"><strong>Last Name:</strong>  {{ records.lastname }}</li>				    
+					<li class="list-group-item"><strong>Email:</strong>  {{ records.email }}</li>
+					<li class="list-group-item"><strong>Phone:</strong>  {{ records.phone }}</li>
+					<li class="list-group-item"><strong>Occupation:</strong>  {{ records.occupation }}</li>
+					<li class="list-group-item"><strong>Category of Shoot:</strong>  {{ records.category }}</li>
+					<li class="list-group-item"><strong>Day:</strong>  {{ records.day }}</li>
+					<li class="list-group-item"><strong>Time:</strong>  {{ records.time }} {{ records.ampm }}</li>
+					<li class="list-group-item"><strong>Location:</strong>  {{ records.location}}</li>
+
+
+				<!--IF {{ records.location }} == ONSITE then entries below-->
+				<!--{% if {{ records.location }} == "Onsite"}-->
+					<li class="list-group-item list-group-item-warning"><strong>Onsite Address:</strong></li>
+					<li class="list-group-item">{{ records.address }}</li>
+					<li class="list-group-item">{{ records.city }}</li>
+					<li class="list-group-item">{{ records.state }}</li>
+					<li class="list-group-item">{{ records.zipcode }}</li>
+
+				
+			    <a href="#" class="btn btn-secondary">Edit</a>
+			</ul>
+		<hr/>
+		<br><br><br>
+		</div>
+
+			
 		{% endfor %}
 	{% endif %}
+</div>
 
 {% endblock %}
