@@ -10,15 +10,13 @@
 		{% for records in all_addresses %}
 		<div class="col-sm">
 			<ul class="list-group">
-					<li class="list-group-item list-group-item-secondary"><strong><h2>Appointment Date:</h2></strong><b>{{ records.month }} {{ records.date }}, {{ records.year }}</b></li>
+					<li class="list-group-item list-group-item-secondary"><strong><h2>Appointment Date:</h2></strong><b>{{ records.day }} {{ records.month }} {{ records.date }}, {{ records.year }} {{ records.time }} {{ records.ampm }}</b></li>
 					<li class="list-group-item"><strong>First Name:</strong> {{ records.firstname }}</li>
 					<li class="list-group-item"><strong>Last Name:</strong>  {{ records.lastname }}</li>				    
 					<li class="list-group-item"><strong>Email:</strong>  {{ records.email }}</li>
 					<li class="list-group-item"><strong>Phone:</strong>  {{ records.phone }}</li>
 					<li class="list-group-item"><strong>Occupation:</strong>  {{ records.occupation }}</li>
 					<li class="list-group-item"><strong>Category of Shoot:</strong>  {{ records.category }}</li>
-					<li class="list-group-item"><strong>Day:</strong>  {{ records.day }}</li>
-					<li class="list-group-item"><strong>Time:</strong>  {{ records.time }} {{ records.ampm }}</li>
 					<li class="list-group-item"><strong>Location:</strong>  {{ records.location}}</li>
 
 
