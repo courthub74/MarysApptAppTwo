@@ -7,6 +7,7 @@ Marys Appt App v.3
 * some of the inputs to dropdowns
 * a datepicker(nice looking one)
 * if Onsite selected:
-  * pop up an address entry
+  * THEN enter address
+  * then make address entry a pop-up
 * Swap the pages around
   * appointment entry should be the first page
