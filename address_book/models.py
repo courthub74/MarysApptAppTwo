@@ -12,7 +12,7 @@ class Address(models.Model):
 	date = models.CharField(max_length=200)
 	year = models.CharField(max_length=10)
 	time = models.CharField(max_length=10)
-	ampm = models.CharField(max_length=2)
+	ampm = models.CharField(max_length=5)
 	location = models.CharField(max_length=100)
 	address = models.CharField(max_length=200)
 	city = models.CharField(max_length=200)
