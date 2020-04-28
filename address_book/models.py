@@ -20,5 +20,8 @@ class Address(models.Model):
 	zipcode = models.CharField(max_length=10)
 
 
+	# Maybe I need to make another class
+
+
 	def __str__(self):
 		return self.firstname

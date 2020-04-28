@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Entry</h2>
+<br>
+
+{% if get_address %}
+	<form method="POST">
+		{% csrf_token %}
+
+
+	  <div class="form-group">         <!--VALUE instead of placeholder because you want what you entered so you can edit it-->
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.firstname }}" name="firstname"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.lastname }}" name="lastname"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.email }}" name="email">
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.phone }}" name="phone">
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.occupation }}" name="occupation"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.category }}" name="category"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.day }}" name="day"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.month }}" name="month"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.date }}" name="date"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.year }}" name="year"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.time }}" name="time"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.ampm }}" name="ampm"> 
+	  </div>
+
+	  <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.location }}" name="location"> 
+	  </div>
+
+	   <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.address }}" name="address">
+	  </div>
+
+	   <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.city }}" name="city">
+	  </div>
+
+	    <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.state }}" name="state">
+	  </div>
+
+	    <div class="form-group">
+	    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.zipcode }}" name="zipcode">
+	  </div>
+	  <br>
+
+
+	  <div class="form-group">
+	  	<input type="hidden" value="{{ get_address.id }}" name="id">
+	  </div>
+
+	  <button type="submit" class="btnbtn btn-lg btn-block btn-secondary">Edit Entry</button>
+	</form>
+	<br>
+	<!--DELETE button-->
+	<form method="POST" action="{% url 'delete' get_address.id %}">
+		{% csrf_token %}
+		<input type="hidden" value="{{ get_address.id }}" name="id">
+		<button type="submit" class="btn btn-lg btn-block btn-danger">Delete Entry</button>
+	</form>
+
+	<hr>
+
+
+	{% endif %}
+
+{% endblock %}

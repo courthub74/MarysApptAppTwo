@@ -6,4 +6,4 @@ class AddressForm(forms.ModelForm):
 		model = Address
 		fields = ["firstname", "lastname", "email", "phone", "occupation", "category", "day", "month", "date", "year", "time", "ampm", "location", "address", "city", "state", "zipcode",]
 
-# Split these classess maybe
+# Split these classess maybe call it LocationForm and then add the addy etc.

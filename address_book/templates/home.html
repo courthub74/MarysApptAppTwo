@@ -10,7 +10,7 @@
 		{% for records in all_addresses %}
 		<div class="col-sm">
 			<ul class="list-group">
-					<li class="list-group-item list-group-item-secondary"><strong><h2>Appointment Date:</h2></strong><b>{{ records.day }} {{ records.month }} {{ records.date }}, {{ records.year }} {{ records.time }} {{ records.ampm }}</b></li>
+					<li class="list-group-item list-group-item-secondary"><strong><h3>Appointment Date:</h3></strong><h4><b>{{ records.day }} {{ records.month }} {{ records.date }}, {{ records.year }} {{ records.time }} {{ records.ampm }}</b></h4></li>
 					<li class="list-group-item"><strong>First Name:</strong> {{ records.firstname }}</li>
 					<li class="list-group-item"><strong>Last Name:</strong>  {{ records.lastname }}</li>				    
 					<li class="list-group-item"><strong>Email:</strong>  {{ records.email }}</li>
@@ -29,7 +29,7 @@
 					<li class="list-group-item">{{ records.zipcode }}</li>
 
 				
-			    <a href="#" class="btn btn-secondary">Edit</a>
+			    <a href="{% url 'edit' records.id %}" class="btn btn-secondary">Edit</a>
 			</ul>
 		<hr/>
 		<br><br><br>

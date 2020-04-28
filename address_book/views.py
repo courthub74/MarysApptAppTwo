@@ -28,4 +28,30 @@ def add_address(request):
 #Split form and call it add_location where you just add the addy.  function reads (add_location)
 
 # EDIT PAGE
+def edit(request, list_id):
+	if request.method == 'POST':
+		current_address = Address.objects.get(pk=list_id)
+		form = AddressForm(request.POST or None, instance=current_address)
+		if form.is_valid():
+			form.save()
+			messages.success(request, ('Address Has Been Edited!'))
+			return redirect('home')
+		else:
+			messages.success(request, ('Seems Like There Was an Error...'))
+			return render(request, 'edit.html', {})
+	else:
+		get_address = Address.objects.get(pk=list_id)
+		return render(request, 'edit.html', {'get_address': get_address})
+
+
+#DELETE PAGE
+def delete(request, list_id):
+	if request.method == 'POST':
+		current_address = Address.objects.get(pk=list_id)
+		current_address.delete()
+		messages.success(request, ('Address Has Been Deleted...'))
+		return redirect('home')
+	else:
+		messages.success(request, ('Nothing To See Here...'))
+		return redirect('home')
 
