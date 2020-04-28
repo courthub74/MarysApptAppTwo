@@ -11,3 +11,4 @@ Marys Appt App v.3
   * then make address entry a pop-up
 * Swap the pages around
   * appointment entry should be the first page
+* Phone # and email exact entries
