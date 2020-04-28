@@ -12,3 +12,4 @@ Marys Appt App v.3
 * Swap the pages around
   * appointment entry should be the first page
 * Phone # and email exact entries
+* Turn it into a Mobile app
