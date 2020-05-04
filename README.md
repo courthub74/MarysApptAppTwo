@@ -1,5 +1,5 @@
 # MarysApptAppTwo
-Marys Appt App v.3
+Django version of Marys Appt App v.3
 
 ## Things to add
 * ~~Input Fields~~
